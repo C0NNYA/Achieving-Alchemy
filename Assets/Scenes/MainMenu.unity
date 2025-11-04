@@ -496,6 +496,7 @@ GameObject:
   - component: {fileID: 129644120}
   - component: {fileID: 129644119}
   - component: {fileID: 129644118}
+  - component: {fileID: 129644121}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -566,7 +567,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 129644119}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 129644121}
+        m_TargetAssemblyTypeName: CameraSwap, Assembly-CSharp
+        m_MethodName: MainSwitch
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
 --- !u!114 &129644119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -605,6 +618,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 129644116}
   m_CullTransparentMesh: 1
+--- !u!114 &129644121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129644116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3514b757174ec4840b8cca3d8bbbb0d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MainCam: {fileID: 330585543}
+  SettingsCam: {fileID: 1187193856}
 --- !u!1 &163052464
 GameObject:
   m_ObjectHideFlags: 0
@@ -2061,6 +2088,7 @@ GameObject:
   - component: {fileID: 929479405}
   - component: {fileID: 929479404}
   - component: {fileID: 929479403}
+  - component: {fileID: 929479406}
   m_Layer: 5
   m_Name: Back
   m_TagString: Untagged
@@ -2131,7 +2159,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 929479404}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 929479406}
+        m_TargetAssemblyTypeName: CameraSwap, Assembly-CSharp
+        m_MethodName: SettingSwitch
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
 --- !u!114 &929479404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2170,6 +2210,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 929479401}
   m_CullTransparentMesh: 1
+--- !u!114 &929479406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 929479401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3514b757174ec4840b8cca3d8bbbb0d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MainCam: {fileID: 330585543}
+  SettingsCam: {fileID: 1187193856}
 --- !u!1 &1082127338
 GameObject:
   m_ObjectHideFlags: 0
