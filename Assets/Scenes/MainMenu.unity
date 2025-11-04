@@ -632,6 +632,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MainCam: {fileID: 330585543}
   SettingsCam: {fileID: 1187193856}
+  MainCanvas: {fileID: 1918164869}
+  SettingsCanvas: {fileID: 2057428266}
 --- !u!1 &163052464
 GameObject:
   m_ObjectHideFlags: 0
@@ -2224,6 +2226,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MainCam: {fileID: 330585543}
   SettingsCam: {fileID: 1187193856}
+  MainCanvas: {fileID: 1918164869}
+  SettingsCanvas: {fileID: 2057428266}
 --- !u!1 &1082127338
 GameObject:
   m_ObjectHideFlags: 0
