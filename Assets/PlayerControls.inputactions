@@ -3,7 +3,7 @@
     "name": "PlayerControls",
     "maps": [
         {
-            "name": "New action map",
+            "name": "Player",
             "id": "c1810b4d-8622-4d5f-8836-676e0e674f14",
             "actions": [
                 {
@@ -37,6 +37,15 @@
                     "name": "Pickup",
                     "type": "Button",
                     "id": "2244f6c6-aa9e-4cdb-878c-97ea6aa93fb7",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "a422d849-b1a3-4905-9b9c-c64788003120",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -151,6 +160,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Pickup",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3ddb066e-4618-4c03-89cd-b616718cd398",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
