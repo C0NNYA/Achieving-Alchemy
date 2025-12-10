@@ -2428,6 +2428,7 @@ MonoBehaviour:
   moveSpeed: 5
   move: {fileID: -7637791008922635776, guid: 9032025a0cf7c954aaa0091b6822229d, type: 3}
   jump: {fileID: 5659636068353634986, guid: 9032025a0cf7c954aaa0091b6822229d, type: 3}
+  jumpForce: 10
 --- !u!136 &210910776
 CapsuleCollider:
   m_ObjectHideFlags: 0

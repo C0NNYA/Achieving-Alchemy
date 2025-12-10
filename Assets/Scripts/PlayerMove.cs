@@ -9,6 +9,7 @@ public class PlayerMove : MonoBehaviour
     private Vector3 _moveDirection;
     public InputActionReference move;
     public InputActionReference jump;
+    public float jumpForce;
 
 
     private void Update()
@@ -16,11 +17,20 @@ public class PlayerMove : MonoBehaviour
         _moveDirection = move.action.ReadValue<Vector3>();
     }
 
-    
+
     private void FixedUpdate()
     {
-        rb.linearVelocity = new Vector3(x:_moveDirection.x * moveSpeed,y:_moveDirection.y * moveSpeed,z:_moveDirection.z * moveSpeed);
+        Vector3 currentY = new Vector3(0, rb.linearVelocity.y, 0);
+
+        Vector3 horizontalVelocity = new Vector3(
+            _moveDirection.x * moveSpeed,
+            0,
+            _moveDirection.z * moveSpeed
+        );
+
+        rb.linearVelocity = horizontalVelocity + currentY;
     }
+
 
     private void OnEnable()
     {
@@ -34,6 +44,6 @@ public class PlayerMove : MonoBehaviour
 
     private void Jump(InputAction.CallbackContext context)
     {
-        Debug.Log("Jumped!");
+        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
     }
 }
