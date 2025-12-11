@@ -40,9 +40,18 @@ public class Cauldron : MonoBehaviour
         }
         plantsInside.Clear();
 
-        // Spawn potion slightly above the cauldron
+        // Spawn potion a bit above center
         Vector3 spawnPos = transform.position + Vector3.up * 0.5f;
-        Instantiate(potionPrefab, spawnPos, Quaternion.identity);
+        GameObject potion = Instantiate(potionPrefab, spawnPos, Quaternion.identity);
+
+        // Add force so it pops out of the cauldron
+        Rigidbody rb = potion.GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            Vector3 launchDir = transform.forward * 2f + Vector3.up * 3f; // tweak values as needed
+            rb.AddForce(launchDir, ForceMode.Impulse);
+        }
+
 
         isMixing = false;
     }
