@@ -41,7 +41,6 @@ public class PlayerMove : MonoBehaviour
     {
         Vector3 currentY = new Vector3(0, rb.linearVelocity.y, 0);
 
-        // Convert input into world-space movement based on player rotation
         Vector3 moveDir = transform.TransformDirection(new Vector3(_moveDirection.x, 0, _moveDirection.z));
         Vector3 horizontalVelocity = moveDir * moveSpeed;
 

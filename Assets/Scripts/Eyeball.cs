@@ -6,7 +6,7 @@ public class BallCollisionSound : MonoBehaviour
     private AudioSource audioSource;
     private bool hasCollided = false;
 
-    [Header("Pitch Settings")]
+    [Header("Randomise Pitch")]
     public float minPitch = 0.8f;
     public float maxPitch = 1.2f;
 
@@ -19,7 +19,6 @@ public class BallCollisionSound : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player") && !hasCollided)
         {
-            // Randomize pitch
             audioSource.pitch = Random.Range(minPitch, maxPitch);
             audioSource.Play();
             hasCollided = true;

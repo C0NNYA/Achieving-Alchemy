@@ -4,11 +4,7 @@ using UnityEngine;
 public class BellTrigger : MonoBehaviour
 {
     private AudioSource audioSource;
-    private bool hasTriggered = false; // Prevent spamming while inside trigger
-
-    [Header("Pitch Settings")]
-    public float minPitch = 0.9f;
-    public float maxPitch = 1.1f;
+    private bool hasTriggered = false;
 
     void Start()
     {
@@ -19,8 +15,6 @@ public class BellTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player") && !hasTriggered)
         {
-            // Randomize pitch for natural variation
-            audioSource.pitch = Random.Range(minPitch, maxPitch);
             audioSource.Play();
             hasTriggered = true;
         }
@@ -30,7 +24,6 @@ public class BellTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            // Allow bell to ring again if player leaves and re-enters
             hasTriggered = false;
         }
     }

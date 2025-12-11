@@ -3,20 +3,20 @@ using UnityEngine.InputSystem;
 
 public class PlayerPickup : MonoBehaviour
 {
-    [Header("Pickup Settings")]
+    [Header("Pickup Power")]
     public float pickupRange = 3f;
     public float pickupForce = 150f;
     public LayerMask pickupLayer;
 
-    [Header("References")]
-    public Transform holdPoint;                 // Empty child transform in front of camera
-    public InputActionReference Pickup;       // Left click input (Hold)
+    [Header("reference")]
+    public Transform holdPoint;
+    public InputActionReference Pickup;
 
     private Rigidbody heldObject;
 
     private void OnEnable()
     {
-        Pickup.action.Enable();                // Ensure the action is enabled
+        Pickup.action.Enable();
         Pickup.action.started += TryPickup;
         Pickup.action.canceled += DropObject;
     }
@@ -31,13 +31,11 @@ public class PlayerPickup : MonoBehaviour
 
     private void Update()
     {
-        // Pull the object toward the hold point
         if (heldObject != null)
         {
             Vector3 moveDir = (holdPoint.position - heldObject.position);
             heldObject.AddForce(moveDir * pickupForce);
 
-            // Reduce rotation so item stays upright-ish
             heldObject.angularVelocity = Vector3.zero;
         }
     }
@@ -49,7 +47,6 @@ public class PlayerPickup : MonoBehaviour
         if (heldObject != null)
             return;
 
-        // Raycast from the center of the camera
         Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f));
         RaycastHit hit;
 
@@ -61,7 +58,7 @@ public class PlayerPickup : MonoBehaviour
             {
                 heldObject = rb;
                 heldObject.useGravity = false;
-                heldObject.linearDamping = 10f;      // Smooth holding feel
+                heldObject.linearDamping = 10f;
             }
         }
     }

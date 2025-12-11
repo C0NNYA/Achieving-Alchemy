@@ -1,13 +1,12 @@
 using UnityEngine;
-using TMPro; // Needed for TextMeshPro
+using TMPro;
 
 public class HUD : MonoBehaviour
 {
-    public TMP_Text goldText; // Drag the TextMeshPro object here
+    public TMP_Text goldText;
 
     void Update()
     {
-        // Update the gold text every frame
         goldText.text = $"Gold: {GameManager.Instance.Money}";
     }
 }
