@@ -23,6 +23,15 @@ public class PlayerInteract : MonoBehaviour
 
         if (Physics.Raycast(ray, out RaycastHit hit, interactRange))
         {
+            // Check for general interactable
+            IInteractable interactable = hit.collider.GetComponent<IInteractable>();
+            if (interactable != null)
+            {
+                interactable.Interact();
+                return;
+            }
+
+            // Check for money pickup (if needed)
             MoneyPickup money = hit.collider.GetComponent<MoneyPickup>();
             if (money != null)
             {
